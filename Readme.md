@@ -2,6 +2,9 @@ This is a collection of Random Graphical Projects as the name of this repo might
 
 They are divided by environmentName/project name. 
 
-A short list of the ones I'm happy with:
+## Processing Sketches
+(editor can be found at processing.org)
 
-VisByte - A processing program that draws bytes from a string. Fun to look at. 
+**VisByte** - A processing program that draws bytes from a string. Fun to look at. 
+**Cyrcles** - Screwing around with "fractals" & recursion
+**Points** - Create a bunch of points, make them do things, testing out classes & functions
