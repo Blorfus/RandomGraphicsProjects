@@ -40,52 +40,41 @@ int winwidth= 1600;
 int circleCount=20;
 color colors[]= { 0xCCFF0000,0xCCFF0AB0, 0xCC0AFF0B, 0xCC0CF0FF, 0xCCFF00FF, 0xCCFFFF00, 0xCC00FFFF, 0xFF000000, 0xFFFFFFFF};
 syrcles circles[]= new syrcles[circleCount];
+int currx=displayWidth/2; 
+int curry=displayHeight/2;
 
 void settings(){
   //size(winwidth,winheight,OPENGL);
-  fullScreen(processing.opengl.PGraphics3D, 1);
+  fullScreen(OPENGL, 1);
+  currx=displayWidth/2; 
+  curry=displayHeight/2;
   }
 
 void setup(){
-  int sx=0;
-  int sy=0;
-  int offset=50;
 
+  println("displayHeight:"+displayHeight+"  DisplayWidth: "+displayWidth+" x:"+currx+"  y:"+curry );
   background(0);
-  for(int z=0; z<circleCount; z++){
-    circles[z]=new syrcles( sx+(offset*z), sy+(offset*z), 200.0);
-    }
-  
 }
-int currx=800, curry=600;
+
 int baseRadius = 300;
 int angularRotationFactor=1;
 int radialOffset=0;
 int radius=750;
 int loopCtr=24;
 void draw(){
-    /*for(int i=0; i<circles.length; i++){
-      float newx=circles[i].getX()+20;
-      float newy=circles[i].getY()+20;
-      circles[i].render();
-      circles[i].setLocation(newx, newy);
-      }*/
-      background(0);
+    background(0);
     fractal(currx, curry, radius,radialOffset);
     loopCtr++;
      //radius=baseRadius+((loopCtr%12)*20);
      radialOffset=radialOffset+(((loopCtr%12)*angularRotationFactor)%360);
       
-
+    
     //println("loopCtr:"+loopCtr+"newRaidus="+radius+" offsetAngle:"+radialOffset);
     //delay(10);
 }
 
 void fractal(int x, int y, int rad, int angularOffsetDeg){
    
-    /*for(int i =0; i<60; i++){    
-      fraclevel(i+(i*10),i+(i*10), 200.0, 4);
-      }*/
       fraclevel(x, y, rad, 4, angularOffsetDeg);  
     }
   
@@ -119,6 +108,7 @@ void fraclevel(float ctrx, float ctry, float rad, int level, int angularOffsetDe
       currColor = currColor>>2; //change color
       curr = curr*0.9;
       }
+    //Debug code to draw level labels on circle  
     /*fill(colors[level]);
     textSize(22);
     text("L"+level, x, y);*/

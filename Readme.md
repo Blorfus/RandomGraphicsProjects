@@ -7,4 +7,4 @@ They are divided by environmentName/project name.
 
 **VisByte** - A processing program that draws bytes from a string. Fun to look at. 
 **Cyrcles** - Screwing around with "fractals" & recursion
-**Points** - Create a bunch of points, make them do things, testing out classes & functions
+**Points** - Create a bunch of points, make them do things, testing out classes & functions. Move your mouse around for this one, I dare you.
